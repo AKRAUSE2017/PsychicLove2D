@@ -1,3 +1,4 @@
+---@type Config
 local config = {
     WINDOW_WIDTH = 1290,
     WINDOW_HEIGHT = 960,

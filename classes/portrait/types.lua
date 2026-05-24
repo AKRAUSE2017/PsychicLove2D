@@ -1,0 +1,19 @@
+---@meta
+
+---@class Portrait
+---@field x number
+---@field y number
+---@field image string
+---@field scale number
+---@field idleAnimation Animation
+---@field blinkAnimation Animation
+---@field smileAnimation Animation
+---@field idleTransitionTimer number
+---@field currentAnimation Animation
+---@field state "idle"|"blinking"
+---@field background love.Image
+---@field isVisible boolean
+---@field init fun(self: Portrait, x: number, y: number, w: number, h: number, image: string, scale?: number)
+---@field render fun(self: Portrait)
+---@field keypressed fun(self: Portrait, key: string)
+---@field update fun(self: Portrait, dt: number)

@@ -1,0 +1,15 @@
+---@meta
+
+---@class Structure
+---@field x number
+---@field y number
+---@field scale number
+---@field image love.Image
+---@field front SegmentDef
+---@field behind SegmentDef
+---@field collision CollisionBox
+---@field frontQuad love.Quad
+---@field behindQuad love.Quad
+---@field init fun(self: Structure, image: love.Image, x: number, y: number, scale?: number, front: SegmentDef, behind: SegmentDef, collision: SegmentDef)
+---@field renderFrontSegment fun(self: Structure)
+---@field renderBehindSegment fun(self: Structure)

@@ -1,5 +1,11 @@
 local animations = {}
 
+---@param image love.Image
+---@param width number
+---@param height number
+---@param duration? number
+---@param slice? Slice
+---@return Animation
 function animations.newAnimation(image, width, height, duration, slice)
     local slice = slice or {x=0, y=0, width=image:getWidth(), height=image:getHeight()}
 
@@ -22,6 +28,12 @@ function animations.newAnimation(image, width, height, duration, slice)
 end
 
 
+---@param path string
+---@param width number
+---@param height number
+---@param duration? number
+---@param slice? Slice
+---@return Animation
 function animations.imageToAnimation(path, width, height, duration, slice)
     local image = love.graphics.newImage(path)
 

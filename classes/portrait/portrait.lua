@@ -3,15 +3,21 @@ Portrait = Class{}
 local animations = require("helpers.animations")
 local config = require("config")
 
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@param image string
+---@param scale? number
 function Portrait:init(x, y, w, h, image, scale)
     self.scale = scale or 1
 
     self.x = x
     self.y = y
-    
+
     self.image = image
     local i = love.graphics.newImage(image)
-    
+
     local idleSlice = {x=0, y=0, width=i:getWidth()/3, height=i:getHeight()}
     self.idleAnimation = animations.imageToAnimation(image, w, h, 2.3, idleSlice)
 
@@ -42,15 +48,17 @@ function Portrait:render()
     love.graphics.draw(self.currentAnimation.spriteSheet, self.currentAnimation.quads[spriteIndex], self.x, self.y, 0, self.scale)
 end
 
+---@param key string
 function Portrait:keypressed(key)
    if key == "k" then
       self.isVisible = not self.isVisible
    end
 end
 
+---@param dt number
 function Portrait:update(dt)
     if (not self.isVisible) then return end
-    
+
     self.currentAnimation.currentTime = self.currentAnimation.currentTime + dt
     self.idleTransitionTimer = self.idleTransitionTimer + dt
 
@@ -59,7 +67,7 @@ function Portrait:update(dt)
         self.state = "blinking"
         self.currentAnimation = self.blinkAnimation
         self.currentAnimation.currentTime = 0
-        
+
         self.idleTransitionTimer = 0
     end
 

@@ -1,5 +1,12 @@
 Structure = Class{}
 
+---@param image love.Image
+---@param x number
+---@param y number
+---@param scale? number
+---@param front SegmentDef
+---@param behind SegmentDef
+---@param collision SegmentDef
 function Structure:init(image, x, y, scale, front, behind, collision)
     scale = scale or 1
 
@@ -8,7 +15,7 @@ function Structure:init(image, x, y, scale, front, behind, collision)
     self.scale = scale
 
     self.image = image
-    
+
     self.front = front
     self.behind = behind
 
@@ -36,4 +43,3 @@ function Structure:renderBehindSegment()
     love.graphics.setColor(255/255, 255/255, 255/255)
     love.graphics.draw(self.image, self.behindQuad, self.x + self.behind.xOffset * self.scale, self.y + self.behind.yOffset * self.scale, 0, self.scale)
 end
-

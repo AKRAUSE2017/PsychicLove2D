@@ -1,6 +1,23 @@
 {
     "Lua.diagnostics.globals": [
-        "love"
+        "love",
+        "Push",
+        "Class",
+        "Player",
+        "Map",
+        "Structure",
+        "Portrait"
     ],
+    "json.schemas": [
+        {
+            "fileMatch": [
+                ".luarc.json"
+            ],
+            "url": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json"
+        }
+    ],
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
     "excalidraw.theme": "dark"
 }

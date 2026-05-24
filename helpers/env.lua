@@ -1,6 +1,6 @@
 local config = require('config')
 
-require('classes.structure')
+require('classes.structure.structure')
 
 love.graphics.setDefaultFilter("nearest", "nearest")
 
@@ -15,6 +15,7 @@ local y = config.VIRTUAL_HEIGHT/2 - (image:getHeight()*scale)/2
 print(x,y)
 local table = Structure(image, x, y, scale, front, behind, collision)
 
+---@type Structure[]
 local structures = {
     table
 }

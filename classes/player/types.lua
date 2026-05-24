@@ -1,0 +1,26 @@
+---@meta
+
+---@class Player
+---@field x number
+---@field y number
+---@field w number
+---@field h number
+---@field scale number
+---@field state "move"|"stop-left"|"stop-right"|"stop-top"|"stop-bottom"
+---@field direction "up"|"down"|"left"|"right"
+---@field dx number
+---@field dy number
+---@field idle Animation
+---@field walkDown Animation
+---@field walkRight Animation
+---@field idleRight Animation
+---@field walkLeft Animation
+---@field idleLeft Animation
+---@field walkUp Animation
+---@field idleUp Animation
+---@field currentAnimation Animation
+---@field collision CollisionBox
+---@field init fun(self: Player, x: number, y: number, w: number, h: number, scale?: number)
+---@field render fun(self: Player)
+---@field update fun(self: Player, dt: number)
+---@field handleStructureCollisions fun(self: Player, structures: Structure[])

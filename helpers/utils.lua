@@ -1,5 +1,8 @@
 local utils = {}
 
+---@param obj1 CollisionBox
+---@param obj2 CollisionBox
+---@return boolean
 function utils.collision(obj1, obj2)
     local obj1_rightEdge = obj1.x + obj1.w
     local obj1_leftEdge = obj1.x
@@ -19,6 +22,9 @@ function utils.collision(obj1, obj2)
     return collX and collY
 end
 
+---@param obj CollisionBox
+---@param against CollisionBox
+---@return "left"|"right"|"top"|"bottom"|false
 function utils.collisionType(obj, against)
     local obj1_rightEdge = obj.x + obj.w
     local obj1_leftEdge = obj.x

@@ -1,0 +1,12 @@
+---@meta
+
+---@class Map
+---@field data number[]
+---@field w number
+---@field h number
+---@field cellSize number
+---@field standardTile love.Image
+---@field rug love.Image
+---@field rugQuads love.Quad[]
+---@field init fun(self: Map, data: number[], w: number, h: number, cellSize: number)
+---@field render fun(self: Map)
